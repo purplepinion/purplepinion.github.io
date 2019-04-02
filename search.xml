@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[链表中倒数k个节点]]></title>
+    <url>%2F2019%2F04%2F02%2F%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0k%E4%B8%AA%E8%8A%82%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[链表中倒数k个节点题目描述 输入一个链表，输出该链表中倒数第k个结点。 12345678910111213141516171819202122232425262728293031/*public class ListNode &#123; int val; ListNode next = null; ListNode(int val) &#123; this.val = val; &#125;&#125;*/public class Solution &#123; public ListNode FindKthToTail(ListNode head,int k) &#123; //1.输入空指针 //2.节点总数少于K //3.k = 0时，k - 1 为0xFFFFFFFF if(head==null || k==0)//输入空指针返回 return null; ListNode pa = head;//两个指针 ListNode pb = head; for(int i=0;i&lt;k-1;++i)&#123;//a指针先走k-1 if(pa.next!=null) pa = pa.next; else return null;//节点总数少于K &#125; while(pa.next!=null)&#123;//同时走到a指针为空 pa = pa.next; pb = pb.next; &#125; return pb;//返回b指针 &#125;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[字符流中第一个不重复的元素]]></title>
+    <url>%2F2019%2F04%2F02%2F%E5%AD%97%E7%AC%A6%E6%B5%81%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%85%83%E7%B4%A0%2F</url>
+    <content type="text"><![CDATA[字符流中第一个不重复的元素题目描述 请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符”go”时，第一个只出现一次的字符是”g”。当从该字符流中读出前六个字符“google”时，第一个只出现一次的字符是”l”。 输出描述: 如果当前字符流没有存在出现一次的字符，返回#字符。1234567891011121314151617181920212223import java.util.HashMap;import java.util.ArrayList;public class Solution &#123; HashMap&lt;Character,Integer&gt; map = new HashMap&lt;&gt;();//记录字符和出现次数 ArrayList&lt;Character&gt; list = new ArrayList&lt;&gt;();//记录字符顺序 //Insert one char from stringstream public void Insert(char ch) &#123; if(map.containsKey(ch))//字符出现过，计数加1 map.put(ch,map.get(ch)+1); else map.put(ch,1);//字符没出现过，计数为1 list.add(ch); &#125; //return the first appearence once char in current stringstream public char FirstAppearingOnce() &#123; for(Character c:list)//按顺序遍历找到第一个出现次数是1的字符 if(map.get(c)==1) return c; return '#'; &#125;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[复杂链表的复制]]></title>
+    <url>%2F2019%2F04%2F02%2F%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[复杂链表的复制题目描述 输入一个复杂链表（每个节点中有节点值，以及两个指针，一个指向下一个节点，另一个特殊指针指向任意一个节点），返回结果为复制后复杂链表的head。（注意，输出结果中请不要返回参数中的节点引用，否则判题程序会直接返回空）12345678910111213141516171819202122232425262728293031/*public class RandomListNode &#123; int label; RandomListNode next = null; RandomListNode random = null; RandomListNode(int label) &#123; this.label = label; &#125;&#125;*/import java.util.HashMap;public class Solution &#123; public RandomListNode Clone(RandomListNode pHead) &#123; HashMap&lt;RandomListNode,RandomListNode&gt; map = new HashMap&lt;&gt;();//存放节点，查找O(1) RandomListNode p = pHead; while(p!=null)&#123;//遍历第一次，将值赋给新节点 map.put(p,new RandomListNode(p.label)); p = p.next; &#125; p = pHead; while(p!=null)&#123;//遍历第二次将，next，和random赋值给新的节点 map.get(p).next = map.get(p.next); map.get(p).random = map.get(p.random); p = p.next; &#125; return map.get(pHead); &#125;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[删除链表中重复节点]]></title>
+    <url>%2F2019%2F04%2F02%2F%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E9%87%8D%E5%A4%8D%E8%8A%82%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[删除链表中重复节点题目描述 在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5 处理后为 1-&gt;2-&gt;5 1234567891011121314151617181920212223242526272829303132333435/* public class ListNode &#123; int val; ListNode next = null; ListNode(int val) &#123; this.val = val; &#125;&#125;*/public class Solution &#123; public ListNode deleteDuplication(ListNode pHead) &#123; if(pHead==null)//空链表返回空 return null; ListNode firstNode = new ListNode(-1);//防止头节点被删除 firstNode.next = pHead; ListNode p = pHead; ListNode pre = firstNode;//保存上一个节点 while(p!=null&amp;&amp;p.next!=null)&#123;//当前节点和下一个节点不为空 if(p.val==p.next.val)&#123;//当前节点和下一个节点重复 int val = p.val; while(p!=null&amp;&amp;p.val==val)&#123;//跳过所有重复的节点 p = p.next; &#125; pre.next = p;//pre指向新的值节点 &#125; else&#123;//当前节点和下一个节点不重复，p和pre向后移动 pre = p; p = p.next; &#125; &#125; return firstNode.next;//返回结果 &#125;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[链表中环的入口]]></title>
+    <url>%2F2019%2F04%2F02%2F%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%2F</url>
+    <content type="text"><![CDATA[链表中环的入口题目描述 给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849/* public class ListNode &#123; int val; ListNode next = null; ListNode(int val) &#123; this.val = val; &#125;&#125;*/public class Solution &#123; public ListNode EntryNodeOfLoop(ListNode pHead) &#123; if(pHead==null || pHead.next==null)//此时链表无环 return null; ListNode pSlow = pHead.next; ListNode pFast = pHead; ListNode meet = null; while(pFast!=null&amp;&amp;pSlow!=null)&#123;//检测链表是否存在环 if(pFast==pSlow)&#123; meet = pSlow; break; &#125; pSlow = pSlow.next; pFast = pFast.next; if(pFast.next!=null)&#123; pFast = pFast.next; &#125; &#125; if(meet==null)//链表不存在环 return null; int nodeCount = 1;//链表存在环，计数 ListNode pNode = meet; while(pNode.next!=meet)&#123; pNode=pNode.next; nodeCount++;//获得环中节点数 &#125; pFast = pHead; for(int i=0;i&lt;nodeCount;++i)//指针1先走nodeCount步 pFast = pFast.next; pSlow = pHead;//指针2从头开始 while(pFast!=pSlow)&#123;//指针1 2 同时走，相等即环入口 pFast = pFast.next; pSlow = pSlow.next; &#125; return pFast; &#125;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Maven管理工具]]></title>
     <url>%2F2019%2F04%2F01%2Fmaven001%2F</url>
     <content type="text"><![CDATA[Maven管理工具1.Maven简介 Apache下开源项目，java开发，管理java项目 Maven项目体积小，没有jar包，jar包与项目分离 jar包放在本地仓库，需要jar包，通过公司组织-项目-版本获取 本地仓库索引提高效率 依赖管理概念 多个项目依赖一个仓库里的jar包 项目构建：编码-&gt;编译-&gt;测试(junit)-&gt;运行-&gt;打包-&gt;部署 项目一键构建概念 脱离Tomcat，eclipse运行( 编译到部署) mvn tomcat:run 2.Maven好处 依赖管理 对jar包统一管理，节省空间 一件构建 跨平台 大型项目，提高开发效率 Maven分模块开发 项目分层 互联网项目 按业务分 传统项目 按层分 entity dao service web 3.Maven安装 目录结构 bin 命令 mvn mvnDebug boot 类加载器 conf 配置文件 settings.xml 核心文件 lib 库 jar包 配置 环境变量配置 jdk Maven3.3.x 需要jdk17.以上 版本 环境变量配置 Maven 新建MAVEN_HOME F:\workspace\Maven\apache-maven-3.3.9 添加%MAVEN_HOME %\bin 到path 测试命令 mvn -v 配置本地仓库 修改settings.xml F:\workspace\Maven\repository 本地仓库-&gt;远程仓库(私服)-&gt;中央仓库4.Maven目录结构 src mian 主目录 java java代码 resources 配置文件 properties xml webapp test 测试目录 java java代码 junit测试 resources junit测试配置文件 默认为空 从main读取 webapp pom.xml 项目核心文件5.Maven命令 mvn Tomcat:run 一键启动mvn clean 清理构建信息mvn compile 编译主目录文件mvn test 编译运行test目录代码mvn package 打包web项目，放在target目录mvn install 项目发布到本地仓库 war包mvn site 对项目说明mvn deploy 发布到私服 Maven生命周期 Clean生命周期 clean Default生命周期 compile-&gt;test-&gt;package-&gt;install site生命周期 site 不同生命周期可以同时执行 mvn clean package 7.项目构建 me2插件安装 选择Maven版本 设置settings文件 新建Maven项目 跳过骨架选择(模板) java webapp Group Id ：组名称 Artfact Id：项目名称 Version：版本 packaging：打包方式 webapp下创建WEB-INF添加WEB.xml pom.xml下添加配置文件]]></content>
