@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="JavaWeb核心Servlet1.Servlet简介Servlet 运行在服务端的Java小程序，是sun公司提供一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。但servlet的实质就是java代码，通过java的API动态的向客户端输出内容">
-<meta name="keywords" content="Servlet,Web">
+  <meta name="description" content="字符串的排列题目描述 输入一个字符串,按字典序打印出该字符串中字符的所有排列。例如输入字符串abc,则打印出由字符a,b,c所能排列出来的所有字符串abc,acb,bac,bca,cab和cba。  输出描述: 输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。">
+<meta name="keywords" content="剑指offer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaWeb核心Servlet">
-<meta property="og:url" content="http://purplepinion.github.io/2019/04/01/servlet001/index.html">
+<meta property="og:title" content="字符串的排列">
+<meta property="og:url" content="http://purplepinion.github.io/2019/04/04/字符串的排列/index.html">
 <meta property="og:site_name" content="Chrisz&#39;s Blog">
-<meta property="og:description" content="JavaWeb核心Servlet1.Servlet简介Servlet 运行在服务端的Java小程序，是sun公司提供一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。但servlet的实质就是java代码，通过java的API动态的向客户端输出内容">
+<meta property="og:description" content="字符串的排列题目描述 输入一个字符串,按字典序打印出该字符串中字符的所有排列。例如输入字符串abc,则打印出由字符a,b,c所能排列出来的所有字符串abc,acb,bac,bca,cab和cba。  输出描述: 输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-01T14:21:20.203Z">
+<meta property="og:updated_time" content="2019-04-04T14:03:26.643Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaWeb核心Servlet">
-<meta name="twitter:description" content="JavaWeb核心Servlet1.Servlet简介Servlet 运行在服务端的Java小程序，是sun公司提供一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。但servlet的实质就是java代码，通过java的API动态的向客户端输出内容">
+<meta name="twitter:title" content="字符串的排列">
+<meta name="twitter:description" content="字符串的排列题目描述 输入一个字符串,按字典序打印出该字符串中字符的所有排列。例如输入字符串abc,则打印出由字符a,b,c所能排列出来的所有字符串abc,acb,bac,bca,cab和cba。  输出描述: 输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://purplepinion.github.io/2019/04/01/servlet001/">
+  <link rel="canonical" href="http://purplepinion.github.io/2019/04/04/字符串的排列/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>JavaWeb核心Servlet | Chrisz's Blog</title>
+  <title>字符串的排列 | Chrisz's Blog</title>
   
 
 
@@ -356,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://purplepinion.github.io/2019/04/01/servlet001/">
+    <link itemprop="mainEntityOfPage" href="http://purplepinion.github.io/2019/04/04/字符串的排列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chrisz">
@@ -373,7 +373,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaWeb核心Servlet
+          <h1 class="post-title" itemprop="name headline">字符串的排列
 
               
             
@@ -399,7 +399,7 @@
                 
               
 
-              <time title="创建时间：2019-04-01 22:05:24" itemprop="dateCreated datePublished" datetime="2019-04-01T22:05:24+08:00">2019-04-01</time>
+              <time title="创建时间：2019-04-04 22:01:57" itemprop="dateCreated datePublished" datetime="2019-04-04T22:01:57+08:00">2019-04-04</time>
             
 
             
@@ -417,7 +417,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Servlet/" itemprop="url" rel="index"><span itemprop="name">Servlet</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/剑指offer/" itemprop="url" rel="index"><span itemprop="name">剑指offer</span></a></span>
 
                 
                 
@@ -459,165 +459,14 @@
       
 
       
-        <h3 id="JavaWeb核心Servlet"><a href="#JavaWeb核心Servlet" class="headerlink" title="JavaWeb核心Servlet"></a>JavaWeb核心Servlet</h3><h4 id="1-Servlet简介"><a href="#1-Servlet简介" class="headerlink" title="1.Servlet简介"></a>1.Servlet简介</h4><pre><code>Servlet 运行在服务端的Java小程序，是sun公司提供一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。但servlet的实质就是java代码，通过java的API动态的向客户端输出内容
-</code></pre><a id="more"></a>
-<ul>
-<li><p>servlet规范：包含三个技术点（API）</p>
-<ul>
-<li>servlet技术</li>
-<li>filter技术—过滤器</li>
-<li>listener技术—监听器</li>
-</ul>
-</li>
-<li><p>实现步骤：</p>
-<ul>
-<li>创建类实现Servlet接口</li>
-<li>覆盖尚未实现的方法—service方法</li>
-<li><p>在web.xml进行servlet的配置</p>
-<blockquote>
-<p>但在实际开发中，我们不会直接去实现Servlet接口，因为那样需要覆盖的方法太多，我们一般创建类继承HttpServlet</p>
+        <h4 id="字符串的排列"><a href="#字符串的排列" class="headerlink" title="字符串的排列"></a>字符串的排列</h4><h5 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h5><blockquote>
+<p>输入一个字符串,按字典序打印出该字符串中字符的所有排列。例如输入字符串abc,则打印出由字符a,b,c所能排列出来的所有字符串abc,acb,bac,bca,cab和cba。</p>
 </blockquote>
-</li>
-</ul>
-</li>
-<li>实际实现步骤：<ul>
-<li>创建类继承HttpServlet类</li>
-<li>覆盖doGet和doPost</li>
-<li>在web.xml中进行servlet的配置</li>
-</ul>
-</li>
-</ul>
-<h4 id="2-Servlet的API（生命周期）"><a href="#2-Servlet的API（生命周期）" class="headerlink" title="2.Servlet的API（生命周期）"></a>2.Servlet的API（生命周期）</h4><ul>
-<li><p>Servlet接口中方法</p>
-<ul>
-<li>init(ServletConfig config) <ul>
-<li>何时执行：servlet对象创建的时候执行</li>
-<li>ServletConfig ： 代表的是该servlet对象的配置信息</li>
-</ul>
-</li>
-<li><p>service（ServletRequest request,ServletResponse response）</p>
-<ul>
-<li><p>何时执行：每次请求都会执行</p>
-</li>
-<li><p>ServletRequest ：代表请求 认为ServletRequest 内部封装的是http请求的信息</p>
-</li>
-<li><p>ServletResponse ：代表响应 认为要封装的是响应的信息</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>HttpServlet类的方法</p>
-<ul>
-<li>init()</li>
-<li>doGet(HttpServletRequest request,HttpServletResponse response)</li>
-<li>doPost(HttpServletRequest request,HttpServletResponse response)</li>
-<li>destroy()</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>Servlet的生命周期</p>
-<ul>
-<li><p>Servlet何时创建<br>默认第一次访问servlet时创建该对象</p>
-</li>
-<li><p>Servlet何时销毁<br>服务器关闭servlet就销毁了</p>
-</li>
-<li><p>每次访问必然执行的方法<br>service(ServletRequest req, ServletResponse res)方法</p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="3-Servlet的配置"><a href="#3-Servlet的配置" class="headerlink" title="3.Servlet的配置"></a>3.Servlet的配置</h4><ul>
-<li><p>基本配置</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>MyFirstServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.chris.servlet.QuickStartServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>MyFirstServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/quickStartServlet<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>url-pattern配置方式：</p>
+<h5 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h5><blockquote>
+<p>输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。</p>
 </blockquote>
-<p>1.完全匹配 访问的资源与配置的资源完全相同才能访问到</p>
-<blockquote>
-<p><url-pattern>/quickStartServlet</url-pattern></p>
-</blockquote>
-<p>2.目录匹配 格式：/虚拟的目录../<em>   </em>代表任意</p>
-<blockquote>
-<p><url-pattern>/aaa/bbb/ccc</url-pattern></p>
-</blockquote>
-<p>3.扩展名匹配 格式：*.扩展名</p>
-<blockquote>
-<p><url-pattern>/<em>.abcd</em></url-pattern><br>第二种与第三种不要混用 /aaa/bbb/.abcd（错误的）</p>
-</blockquote>
-</li>
-<li><p>服务器启动实例化Servlet配置</p>
-<ul>
-<li>Servlet的何时创建：默认第一次访问时创建</li>
-<li>为什么是默认？当在servlet的配置时 加上一个配置 <load-on-startup> servlet对象在服务器启动时就创建<blockquote>
-<p><load-on-startup>5</load-on-startup>  //数字优先级</p>
-</blockquote>
-</load-on-startup></li>
-</ul>
-</li>
-<li><p>缺省Servlet</p>
-<ul>
-<li>可以将url-pattern配置一个/，代表该servlet是缺省的servlet</li>
-<li>什么是缺省的servlet？当你访问资源地址所有的servlet都不匹配时 ， 缺省的servlet负责处理其实，web应用中所有的资源的响应都是servlet负责，包括静态资源</li>
-</ul>
-</li>
-<li><p>欢迎页面</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.htm<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>default.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>default.htm<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>default.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="4-ServletContext对象"><a href="#4-ServletContext对象" class="headerlink" title="4.ServletContext对象"></a>4.ServletContext对象</h4><ul>
-<li><p>ServletContext对象</p>
-<blockquote>
-<p>ServletContext代表是一个web应用的环境（上下文）对象，ServletContext对象内部封装是该web应用的信息，</p>
-<p>ServletContext对象一个web应用只有一个</p>
-<p>一个web应用有几个servlet对象？—-多个</p>
-</blockquote>
-</li>
-<li><p>ServletContext对象的生命周期</p>
-<ul>
-<li>创建：该web应用被加载（服务器启动或发布web应用（前提，服务器启动状态））</li>
-<li>销毁：web应用被卸载（服务器关闭，移除该web应用）</li>
-</ul>
-</li>
-<li><p>怎样获得ServletContext对象</p>
-<ul>
-<li>ServletContext servletContext = config.getServletContext();</li>
-<li>ServletContext servletContext = this.getServletContext();</li>
-</ul>
-</li>
-<li><p>ServletContext的作用</p>
-<ul>
-<li><p>获得web应用全局的初始化参数<br>web.xml中配置初始化参数</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>driver<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span>com.mysql.jdbc.Driver<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过context对象获得参数</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">//获得ServletContext对象</span></span><br><span class="line">   ServletContext context = getServletContext();</span><br><span class="line">   <span class="comment">//1、获得初始化参数</span></span><br><span class="line">   String initParameter = context.getInitParameter(<span class="string">"driver"</span>);</span><br><span class="line">   System.out.println(initParameter);</span><br><span class="line">   <span class="comment">//2、获得a b c d.txt的绝对路径</span></span><br><span class="line"><span class="comment">//2.1 获得a.txt</span></span><br><span class="line">String realPath_A = context.getRealPath(<span class="string">"a.txt"</span>);</span><br><span class="line">System.out.println(realPath_A);</span><br><span class="line"><span class="comment">//2.2 获得b.txt</span></span><br><span class="line">String realPath_B = context.getRealPath(<span class="string">"WEB-INF/b.txt"</span>);</span><br><span class="line">System.out.println(realPath_B);</span><br><span class="line"><span class="comment">//2.3 获得c.txt</span></span><br><span class="line">String realPath_C = context.getRealPath(<span class="string">"WEB-INF/classes/c.txt"</span>);</span><br><span class="line">System.out.println(realPath_C);</span><br><span class="line"><span class="comment">//2.4 获得d.txt----获取不到</span></span><br><span class="line"><span class="comment">//在读取src(classes) 下的资源是可以同类加载器----专门加载classes 下的文件的</span></span><br><span class="line"><span class="comment">//getResource() 参数是一个相对地址 相对classes</span></span><br><span class="line">String path = ContextServlet.class.getClassLoader().getResource(<span class="string">"c.txt"</span>).getPath();</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>获得web应用中任何资源的绝对路径（重要）</p>
-<ul>
-<li>方法：String path = context.getRealPath(相对于该web应用的相对地址);</li>
-</ul>
-</li>
-<li><p>ServletContext是一个域对象（重要）</p>
-<ul>
-<li><p>什么是域对象？什么是域？</p>
-<blockquote>
-<p>存储数据的区域就是域对象<br>ServletContext域对象的作用范围：整个web应（所有的web资源都可以随意向        &gt;servletcontext域中存取数据，数据可以共享）</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>域对象的通用的方法：</p>
-<blockquote>
-<p>setAtrribute(String name,Object obj);<br>getAttribute(String name);<br>removeAttribute(String name);</p>
-</blockquote>
-</li>
-</ul>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*思路:</span></span><br><span class="line"><span class="comment">*1.第一步求所有可能出现在第一个位置的字符,即交换第一个字符和后面的字符,注意恢复</span></span><br><span class="line"><span class="comment">*2.求第一个固定后,后面的排列</span></span><br><span class="line"><span class="comment">*3.对后面的排列继续固定第一个,求后面的排列.....递归</span></span><br><span class="line"><span class="comment">*4.当后面只有一个字符时,若不存在重复,即满足</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*返回结果注意有序,Collection.sort()否则只有一半通过率</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;String&gt; <span class="title">Permutation</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;String&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        PermutationCore(str.toCharArray(),<span class="number">0</span>,res);<span class="comment">//递归处理字符串</span></span><br><span class="line">        Collections.sort(res);<span class="comment">//按字典顺序排序结果</span></span><br><span class="line">        <span class="keyword">return</span> (ArrayList)res;<span class="comment">//返回结果,注意向下转型</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PermutationCore</span><span class="params">(<span class="keyword">char</span>[] chars,<span class="keyword">int</span> begin,ArrayList&lt;String&gt; list)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(begin == chars.length-<span class="number">1</span>)&#123;<span class="comment">//到最后一个字符,如果不重复,加入结果集合</span></span><br><span class="line">            String str = String.valueOf(chars);</span><br><span class="line">            <span class="keyword">if</span>(!list.contains(str))&#123;</span><br><span class="line">                list.add(str);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=begin;i&lt;chars.length;++i)&#123;<span class="comment">//固定第一个字母,有chars.length种情况</span></span><br><span class="line">                swap(chars,begin,i);<span class="comment">//选择第i种情况</span></span><br><span class="line">                PermutationCore(chars,begin+<span class="number">1</span>,list);<span class="comment">//递归调用,依次固定后面位置的字母</span></span><br><span class="line">                swap(chars,begin,i);<span class="comment">//记得交换回来</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">char</span>[] chs,<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> temp = chs[i];</span><br><span class="line">        chs[i] = chs[j];</span><br><span class="line">        chs[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -641,9 +490,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Servlet/" rel="tag"># Servlet</a>
-          
-            <a href="/tags/Web/" rel="tag"># Web</a>
+            <a href="/tags/剑指offer/" rel="tag"># 剑指offer</a>
           
         </div>
       
@@ -656,8 +503,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/30/leetcode-3sum/" rel="next" title="leetcode:three_sum">
-                <i class="fa fa-chevron-left"></i> leetcode:three_sum
+              <a href="/2019/04/02/排序算法/" rel="next" title="排序算法">
+                <i class="fa fa-chevron-left"></i> 排序算法
               </a>
             
           </div>
@@ -666,8 +513,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/01/tomcat001/" rel="prev" title="HTTP和Tomcat服务器">
-                HTTP和Tomcat服务器 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/04/二叉搜索树与双向链表/" rel="prev" title="二叉搜索树与双向链表">
+                二叉搜索树与双向链表 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -851,7 +698,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaWeb核心Servlet"><span class="nav-number">1.</span> <span class="nav-text">JavaWeb核心Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Servlet简介"><span class="nav-number">1.1.</span> <span class="nav-text">1.Servlet简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Servlet的API（生命周期）"><span class="nav-number">1.2.</span> <span class="nav-text">2.Servlet的API（生命周期）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Servlet的配置"><span class="nav-number">1.3.</span> <span class="nav-text">3.Servlet的配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-ServletContext对象"><span class="nav-number">1.4.</span> <span class="nav-text">4.ServletContext对象</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串的排列"><span class="nav-number">1.</span> <span class="nav-text">字符串的排列</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#题目描述"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#输出描述"><span class="nav-number">1.2.</span> <span class="nav-text">输出描述:</span></a></li></ol></li></ol></div>
             
 
           </div>
