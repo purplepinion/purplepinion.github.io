@@ -1,2 +1,2 @@
 # purplepinion.github.io
-### 博客地址chrisz.size
+### 博客地址chrisz.site
